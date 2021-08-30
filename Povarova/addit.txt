@@ -1,0 +1,27 @@
+template<typename T> friend ostream& operator<<(T& stream, const Passenger& p);
+template<typename T> ostream& operator<<(T& stream, const Passenger& p)
+{
+	stream << "/n Фамилия - " << p.surname;
+	stream << "/n Имя -  " << p.name;
+	stream << "/n Отчество - " << p.patronymic;
+	stream << "/n Дата рождения - " << p.birthday;
+	stream << "/n Паспортные данные - " << p.passport;
+	stream << "/n Национальность - " << p.nationality;
+	stream << "/n Пол - " << p.gender;
+	return stream;
+}
+
+
+template<typename T> friend ostream& operator<<(T& stream, const Flight& f);
+template<typename T>
+ostream& operator<<(T& stream, const Flight& f) {
+	stream << "/n Идентификатор рейса - " << f.id;
+	stream << "/n Город отправления -  " << f.departureCity;
+	stream << "/n Город прибытия - " << f.arrivalCity;
+	stream << "/n Код аэропорта отправления - " << f.departureAirport;
+	stream << "/n Код аэропорта прибытия - " << f.arrivalAirport;
+	stream << "/n Время отправления - " << f.departureTime;
+	stream << "/n Время прибытия - " << f.arrivalTime;
+	stream << "/n Авиалиния  - " << f.airline;
+	return stream;
+}
